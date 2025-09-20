@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Google Sign In with Firebase</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="loginBtn">Sign in with Google</button>
-  <button id="logoutBtn">Logout</button>
-  <p id="status">Not logged in</p>
-<script src="script.js">
+  <div class="container">
+    <button id="loginBtn">Sign in with Google</button>
+    <button id="logoutBtn" style="display:none;">Logout</button>
+    <div id="profile" style="display:none;">
+      <img id="userPic" src="" alt="Profile Picture">
+      <p id="userEmail"></p>
+    </div>
+    <p id="status">Not logged in</p>
+  </div>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
