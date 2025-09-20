@@ -1,42 +1,26 @@
 <script type="module">
-  // Import Firebase SDK
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyD***************",
+    apiKey: "AIzaSyBsZWjM2A3a3eyqxitZ-pHHNunUUkHjzi8",
     authDomain: "rictei-login.firebaseapp.com",
     projectId: "rictei-login",
-    storageBucket: "rictei-login.appspot.com",
-    messagingSenderId: "1234567890",
-    appId: "1:1234567890:web:abcdef12345"
+    storageBucket: "rictei-login.firebasestorage.app",
+    messagingSenderId: "473481614209",
+    appId: "1:473481614209:web:ea5318c848f42fd0368e80",
+    measurementId: "G-0QEGDBRJDV"
   };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-
-  // Sign In with Google
-  document.getElementById("loginBtn").addEventListener("click", () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        document.getElementById("status").innerHTML = 
-          `Welcome ${user.displayName} <br> Email: ${user.email}`;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  });
-
-  // Sign Out
-  document.getElementById("logoutBtn").addEventListener("click", () => {
-    signOut(auth).then(() => {
-      document.getElementById("status").innerHTML = "Logged out.";
-    });
-  });
-
+  const analytics = getAnalytics(app);
+</script>
 
 
 
